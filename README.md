@@ -1,29 +1,30 @@
 # Organization Management Service – Backend (FastAPI + MongoDB)
 
-This project implements a multi-tenant Organization Management backend designed to support platforms where each organization requires isolated data storage, secure admin authentication, and scalable database management. It is built using **FastAPI**, **MongoDB**, **JWT authentication**, and **bcrypt password hashing**.
+This project implements a multi-tenant Organization Management backend designed for platforms where each organization requires isolated data storage, secure authentication, and scalable database management.  
+It is built using **FastAPI**, **MongoDB**, **JWT**, and **bcrypt**.
 
-The design prioritizes modularity, clarity, and horizontal scalability, making it suitable for SaaS-style applications.
+The backend is modular, cleanly structured, and suitable for SaaS-style applications.
 
 ---
 
 ## 🚀 Features
-- Create organizations with isolated databases (`org_<name>`)
-- Secure admin creation with bcrypt-hashed passwords
-- JWT-based authentication
-- Dynamic database creation, migration, and deletion
-- Centralized master database for metadata
-- Clean modular project structure (routes, repository, models, config)
-- Fully async using Motor (MongoDB async driver)
+- Organization creation with isolated MongoDB databases  
+- Secure admin creation (bcrypt hashed passwords)  
+- JWT-based authentication  
+- Dynamic DB creation, migration, and deletion  
+- Centralized master database  
+- Asynchronous operations with Motor  
+- Modular routing + repository pattern  
 
 ---
 
 ## 🛠️ Tech Stack
-- **FastAPI** (Python)
-- **MongoDB**
-- **Motor**
-- **JWT**
-- **bcrypt**
-- **Pydantic**
+- FastAPI  
+- MongoDB  
+- Motor  
+- bcrypt  
+- JWT  
+- Pydantic  
 
 ---
 
@@ -99,7 +100,7 @@ If installed as a service:
 net start MongoDB
 ```
 
-Else:
+Or run manually:
 ```
 "C:\Program Files\MongoDB\Server\7.0\bin\mongod.exe"
 ```
@@ -111,106 +112,96 @@ Else:
 uvicorn app.main:app --reload --port 8000
 ```
 
-Open API docs at:
+Open API docs:
+
 👉 http://127.0.0.1:8000/docs
-
----
-
-## 📘 API Documentation Summary
-
-### **POST /org/create**
-Create organization + admin.
-
-### **GET /org/get**
-Fetch organization metadata.
-
-### **PUT /org/update** *(JWT required)*
-Rename organization + migrate data.
-
-### **DELETE /org/delete** *(JWT required)*
-Delete organization + dynamic database.
-
-### **POST /admin/login**
-Admin login → returns JWT.
 
 ---
 
 # 🧠 High-Level Architecture Overview
 
-This backend uses a **multi-tenant architecture** where each organization has its own MongoDB database.  
-The master database holds global metadata and authentication information.
+This backend uses a **multi-tenant architecture**:
 
-### Key Components:
-- **FastAPI Backend**
-- **Master Database**
-- **Dynamic Organization Databases**
-- **JWT Auth Layer**
-- **Repository Layer**
+- Each organization gets its own MongoDB database  
+- The master database stores global configuration + admin metadata  
+- The repository layer handles DB operations  
+- JWT ensures secure admin-level actions  
+- Design ensures scalability and modularity  
 
 ---
 
 # 🏗️ High-Level Architecture Diagram
-> Place your image inside `/assets/`
 
-```
-<p align="center"> <img src="assets/High_level_Architecture.png" width="800"> </p>
-```
+<p align="center">
+  <img src="High_level_Architecture.png" width="800">
+</p>
 
 ---
 
 # 📊 Supporting Output Screenshots
 
-### MongoDB Compass – Master DB
-```
-<p align="center"> <img src="assets/Mangodb_compass_output.png" width="800"> </p>
-```
+## 🗄️ MongoDB Compass – Master DB
+<p align="center">
+  <img src="Mangodb_compass_output.png" width="800">
+</p>
 
-### MongoDB Compass – Dynamic Org DB
-```
-<p align="center"> <img src="assets/Mangodb_compass_output2.png" width="800"> </p>
-```
+---
 
-### Terminal Output
-```
-<p align="center"> <img src="assets/terminal_output.png" width="800"> </p>
-```
+## 🗄️ MongoDB Compass – Dynamic Org DB
+<p align="center">
+  <img src="Mangodb_compass_output2.png" width="800">
+</p>
 
-### POST /org/create Example
-```
-<p align="center"> <img src="assets/POST_config.png" width="800"> </p>
-```
+---
 
-### Admin Auth Example
-```
-<p align="center"> <img src="assets/admin_auth_config.png" width="800"> </p>
-```
+## 💻 Terminal Output – Running the Backend
+<p align="center">
+  <img src="terminal_output.png" width="800">
+</p>
+
+---
+
+## 📬 POST /org/create Example
+<p align="center">
+  <img src="POST_config.png" width="800">
+</p>
+
+---
+
+## 🔐 Admin Authentication Example
+<p align="center">
+  <img src="admin_auth_config.png" width="800">
+</p>
 
 ---
 
 # 📈 Scalability & Design Choices
 
-This architecture is scalable because:
-
-- Each tenant has an isolated database  
-- Easy horizontal scaling  
-- Secure boundaries between organizations  
+### ✔ Strengths
+- Strong data isolation  
+- Easy to delete or migrate orgs  
+- Scales horizontally across DB clusters  
 - Clean modular backend  
+- Secure authentication  
 
-### Trade-Offs:
-- More databases = more ops overhead  
-- Migration may be expensive on large datasets  
-- Sharding may be needed at very high scale  
+### ✔ Trade-offs
+- More databases = more operational overhead  
+- Migrations can be expensive  
+- Very large systems may require sharding  
+
+### ✔ For extreme scale (>10k orgs)
+A hybrid shared-tenant + sharded architecture is recommended.
 
 ---
 
 # 🎉 Conclusion
 
-This backend fully meets the assignment requirements:
+This backend fulfills all assignment requirements:
 
-✔ Clean, modular, class-based structure  
-✔ Dynamic multi-tenant DB creation  
-✔ Secure bcrypt + JWT authentication  
-✔ Complete documentation and architecture diagram  
-✔ Screenshots provided for verification  
+✔ Clean modular architecture  
+✔ FastAPI + MongoDB implementation  
+✔ JWT & bcrypt authentication  
+✔ Dynamic multi-tenant DB management  
+✔ Architecture diagram + screenshots included  
 
 ---
