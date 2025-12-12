@@ -133,7 +133,7 @@ This backend uses a **multi-tenant architecture**:
 # 🏗️ High-Level Architecture Diagram
 
 <p align="center">
-  <img src="High_level_Architecture.png" width="800">
+  <img src="/assets/High_level_Architecture.png" width="800">
 </p>
 
 ---
