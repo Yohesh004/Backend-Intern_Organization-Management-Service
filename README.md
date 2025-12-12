@@ -142,35 +142,35 @@ This backend uses a **multi-tenant architecture**:
 
 ## 🗄️ MongoDB Compass – Master DB
 <p align="center">
-  <img src="Mangodb_compass_output.png" width="800">
+  <img src="/assets/Mangodb_compass_output.png" width="800">
 </p>
 
 ---
 
 ## 🗄️ MongoDB Compass – Dynamic Org DB
 <p align="center">
-  <img src="Mangodb_compass_output2.png" width="800">
+  <img src="/assets/Mangodb_compass_output2.png" width="800">
 </p>
 
 ---
 
 ## 💻 Terminal Output – Running the Backend
 <p align="center">
-  <img src="terminal_output.png" width="800">
+  <img src="/assets/terminal_output.png" width="800">
 </p>
 
 ---
 
 ## 📬 POST /org/create Example
 <p align="center">
-  <img src="POST_config.png" width="800">
+  <img src="/assets/POST_config.png" width="800">
 </p>
 
 ---
 
 ## 🔐 Admin Authentication Example
 <p align="center">
-  <img src="admin_auth_config.png" width="800">
+  <img src="/assets/admin_auth_config.png" width="800">
 </p>
 
 ---
