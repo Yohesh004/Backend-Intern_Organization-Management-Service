@@ -153,7 +153,7 @@ The master database holds global metadata and authentication information.
 > Place your image inside `/assets/`
 
 ```
-assets/High_level_Architecture.png
+<p align="center"> <img src="assets/High_level_Architecture.png" width="800"> </p>
 ```
 
 ---
@@ -162,27 +162,27 @@ assets/High_level_Architecture.png
 
 ### MongoDB Compass – Master DB
 ```
-assets/Mangodb_compass_output.png
+<p align="center"> <img src="assets/Mangodb_compass_output.png" width="800"> </p>
 ```
 
 ### MongoDB Compass – Dynamic Org DB
 ```
-assets/Mangodb_compass_output2.png
+<p align="center"> <img src="assets/Mangodb_compass_output2.png" width="800"> </p>
 ```
 
 ### Terminal Output
 ```
-assets/terminal_output.png
+<p align="center"> <img src="assets/terminal_output.png" width="800"> </p>
 ```
 
 ### POST /org/create Example
 ```
-assets/POST_config.png
+<p align="center"> <img src="assets/POST_config.png" width="800"> </p>
 ```
 
 ### Admin Auth Example
 ```
-assets/admin_auth_config.png
+<p align="center"> <img src="assets/admin_auth_config.png" width="800"> </p>
 ```
 
 ---
